@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from "@/components/Navbar";
 import '@/assets/styles/globals.css'
 
 // Métadonnées - SEO
@@ -12,7 +13,8 @@ const MainLayout = ({ children }) => {
     return (
         <html lang='fr' suppressHydrationWarning={true}>
         <body>
-            <div>{ children }</div>
+            <Navbar />
+            <main>{ children }</main>
         </body>
         </html>
     )
