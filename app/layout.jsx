@@ -10,7 +10,7 @@ export const metadata = {
 
 const MainLayout = ({ children }) => {
     return (
-        <html lang='fr'>
+        <html lang='fr' suppressHydrationWarning={true}>
         <body>
             <div>{ children }</div>
         </body>
