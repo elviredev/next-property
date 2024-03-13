@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from "@/components/Navbar";
 import '@/assets/styles/globals.css'
+import Footer from "@/components/Footer";
 
 // Métadonnées - SEO
 export const metadata = {
@@ -15,6 +16,7 @@ const MainLayout = ({ children }) => {
         <body>
             <Navbar />
             <main>{ children }</main>
+        <Footer />
         </body>
         </html>
     )
