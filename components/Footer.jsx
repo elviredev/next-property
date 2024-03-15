@@ -18,6 +18,7 @@ const Footer = () => {
                     className="flex flex-wrap justify-center md:justify-start mb-4 md:mb-0"
                 >
                     <ul className="flex space-x-4">
+                        <li><Link href="/">Accueil</Link></li>
                         <li><Link href="/properties">Propriétés</Link></li>
                         <li><Link href="#">Conditions d'utilisation</Link></li>
                     </ul>
