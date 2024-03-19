@@ -23,4 +23,25 @@ async function fetchProperties() {
     }
 }
 
-export { fetchProperties }
+// récupérer une seule propriété
+async function fetchProperty(id) {
+    try {
+        // vérifier le cas ou le domaine n'est pas encore disponible
+        if (!apiDomain) {
+            return null
+        }
+
+        const res = await fetch(`${apiDomain}/properties/${id}`)
+        // si echec
+        if (!res.ok) {
+            throw new Error('Échec de la récupération des données')
+        }
+        // si response OK
+        return res.json()
+    } catch (e) {
+        console.log(e)
+        return null
+    }
+}
+
+export { fetchProperties, fetchProperty }
