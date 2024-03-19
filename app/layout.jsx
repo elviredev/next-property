@@ -1,4 +1,5 @@
 import React from 'react'
+import { Montserrat, Lora } from 'next/font/google'
 import Navbar from "@/components/Navbar";
 import '@/assets/styles/globals.css'
 import Footer from "@/components/Footer";
@@ -10,9 +11,24 @@ export const metadata = {
     keywords: 'location, propriétés, trouvez locations, trouvez propriétés'
 }
 
+// font-family google-fonts
+const montserrat = Montserrat({
+    weight: ['400', '700'],
+    subsets: ['latin'],
+    variable: 'font-montserrat',
+    display: 'swap',
+})
+
+const lora = Lora({
+    subsets: ['latin'],
+    variable: '--font-lora',
+    display: 'swap',
+})
+
 const MainLayout = ({ children }) => {
     return (
-        <html lang='fr' suppressHydrationWarning={true}>
+        <html lang='fr' suppressHydrationWarning={true} className={`${montserrat.className} ${lora.variable}`}>
+
         <body>
             <Navbar />
             <main>{ children }</main>
