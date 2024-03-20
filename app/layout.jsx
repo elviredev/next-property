@@ -1,8 +1,9 @@
 import React from 'react'
-import { Montserrat, Lora } from 'next/font/google'
 import Navbar from "@/components/Navbar";
-import '@/assets/styles/globals.css'
 import Footer from "@/components/Footer";
+import AuthProvider from "@/components/AuthProvider";
+import '@/assets/styles/globals.css'
+import { Montserrat, Lora } from 'next/font/google'
 
 // Métadonnées - SEO
 export const metadata = {
@@ -27,14 +28,20 @@ const lora = Lora({
 
 const MainLayout = ({ children }) => {
     return (
-        <html lang='fr' suppressHydrationWarning={true} className={`${montserrat.className} ${lora.variable}`}>
+        <AuthProvider>
+            <html
+                lang='fr'
+                suppressHydrationWarning={true}
+                className={`${montserrat.className} ${lora.variable}`}
+            >
 
-        <body>
-            <Navbar />
-            <main>{ children }</main>
-        <Footer />
-        </body>
-        </html>
+                <body>
+                    <Navbar />
+                    <main>{ children }</main>
+                <Footer />
+                </body>
+            </html>
+        </AuthProvider>
     )
 }
 export default MainLayout
