@@ -117,13 +117,13 @@ const PropertyAddForm = () => {
                     value={fields.type}
                     onChange={handleChange}
                 >
-                    <option value="Apartment">Appartement</option>
-                    <option value="Condo">Copropriété</option>
-                    <option value="House">Maison</option>
-                    <option value="Cabin Or Cottage">Cabane ou Chalet</option>
-                    <option value="Room">Chambre</option>
+                    <option value="Appartement">Appartement</option>
+                    <option value="Copropriété">Copropriété</option>
+                    <option value="Maison">Maison</option>
+                    <option value="Cabane ou Chalet">Cabane ou Chalet</option>
+                    <option value="Chambre">Chambre</option>
                     <option value="Studio">Studio</option>
-                    <option value="Other">Autre</option>
+                    <option value="Autre">Autre</option>
                 </select>
             </div>
 

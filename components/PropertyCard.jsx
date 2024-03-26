@@ -10,7 +10,7 @@ const PropertyCard = ({ property }) => {
         const { rates } = property
         // condition d'affichage selon les tarifs
         if (rates.monthly) {
-            return `${rates.monthly.toLocaleString()}/mo`
+            return `${rates.monthly.toLocaleString()}/mois`
         } else if (rates.weekly) {
             return `${rates.weekly.toLocaleString()}/sem`
         } else if (rates.nightly) {
@@ -62,7 +62,7 @@ const PropertyCard = ({ property }) => {
                     )}
 
                     { property.rates.weekly && (
-                        <p><FaMoneyBill className='inline mr-2' />Hebdomadaire</p>
+                        <p><FaMoneyBill className='inline mr-2' />Hebdo.</p>
                     )}
 
                     { property.rates.monthly && (
