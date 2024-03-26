@@ -16,12 +16,17 @@
     <inspection_tool class="HtmlUnknownTarget" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="JSCheckFunctionSignatures" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="JSIgnoredPromiseFromCall" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSIncompatibleTypesComparison" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="JSRemoveUnnecessaryParentheses" enabled="false" level="INFORMATION" enabled_by_default="false" />
     <inspection_tool class="JSUnresolvedReference" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
       <option name="processCode" value="true" />
       <option name="processLiterals" value="true" />
       <option name="processComments" value="true" />
+    </inspection_tool>
+    <inspection_tool class="UnnecessaryLocalVariableJS" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
+      <option name="m_ignoreAnnotatedVariables" value="false" />
     </inspection_tool>
     <inspection_tool class="UnnecessaryReturnJS" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="com.haulmont.rcb.ArrayToJSXMapInspection" enabled="false" level="WARNING" enabled_by_default="false" />

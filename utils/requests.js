@@ -10,7 +10,7 @@ async function fetchProperties() {
             return []
         }
 
-        const res = await fetch(`${apiDomain}/properties`)
+        const res = await fetch(`${apiDomain}/properties`, {cache: "no-store"})
         // si echec
         if (!res.ok) {
             throw new Error('Échec de la récupération des données')
