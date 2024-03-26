@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import { fetchProperty } from '@/utils/requests'
 import PropertyHeaderImage from "@/components/PropertyHeaderImage";
 import PropertyDetails from "@/components/PropertyDetails";
+import PropertyImages from "@/components/PropertyImages";
 import Spinner from "@/components/Spinner";
 import { FaArrowLeft } from 'react-icons/fa'
 
@@ -42,14 +43,13 @@ const PropertyPage = () => {
         )
     }
 
-
     return <>
         {loading && <Spinner loading={loading} />}
         {!loading && property && (<>
             {/* Property Header Image */}
             <PropertyHeaderImage image={ property.images[0] } />
             {/* Go Back */}
-            <section>
+            <section className="bg-indigo-50">
                 <div className="container m-auto py-6 px-6">
                     <Link
                         href="/properties"
@@ -59,8 +59,8 @@ const PropertyPage = () => {
                     </Link>
                 </div>
             </section>
-
-            <section className="bg-blue-50">
+            {/* Détail Property */}
+            <section className="bg-indigo-50">
                 <div className="container m-auto py-10 px-6">
                     <div className="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
                         {/* Property Infos */}
@@ -154,6 +154,9 @@ const PropertyPage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Images supplémentaires */}
+            <PropertyImages images={property.images} />
             </>)
         }
     </>
