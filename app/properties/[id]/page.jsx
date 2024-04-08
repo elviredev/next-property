@@ -36,6 +36,7 @@ const PropertyPage = () => {
         }
     }, [id, property]);
 
+
     // si pas de propriété et si pas de chargement donc si la propriété est null
     if (!property && !loading) {
         return(

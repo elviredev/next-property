@@ -2,8 +2,10 @@ import React from 'react'
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
-import '@/assets/styles/globals.css'
 import { Montserrat, Lora } from 'next/font/google'
+import { ToastContainer } from 'react-toastify';
+import '@/assets/styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 // Métadonnées - SEO
 export const metadata = {
@@ -38,7 +40,8 @@ const MainLayout = ({ children }) => {
                 <body>
                     <Navbar />
                     <main>{ children }</main>
-                <Footer />
+                    <Footer />
+                    <ToastContainer />
                 </body>
             </html>
         </AuthProvider>
