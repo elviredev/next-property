@@ -1,8 +1,15 @@
 'use client'
-import {useState} from "react";
-// import Select from 'react-select'
+import { useState, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { fetchProperty } from "@/utils/requests";
 
-const PropertyAddForm = () => {
+const PropertyEditForm = () => {
+    const { id } = useParams()
+    const router = useRouter()
+
+    //const [mounted, setMounted] = useState(false);
+
     const [fields, setFields] = useState({
         type: '',
         name: '',
@@ -26,9 +33,40 @@ const PropertyAddForm = () => {
             name: '',
             email: '',
             phone: '',
-        },
-        images: [],
+        }
     });
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        //setMounted(true)
+
+        // Fetch property data for form
+        const fetchPropertyData = async () => {
+            try {
+                const propertyData = await fetchProperty(id)
+
+                // Check rates for null, if so then make empty string
+                if (propertyData && propertyData.rates) {
+                    const defaultRates = {...propertyData.rates}
+                    for (const rate in defaultRates) {
+                        if (defaultRates[rate] === null) {
+                            defaultRates[rate] = ''
+                        }
+                    }
+                    propertyData.rates = defaultRates
+                }
+
+                setFields(propertyData)
+            } catch (e) {
+                console.error(e)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchPropertyData()
+    }, [])
 
     // Form input Handlers
     const handleChange = (e) => {
@@ -81,29 +119,43 @@ const PropertyAddForm = () => {
             amenities: updatedAmenities
         }))
     }
-    const handleImageChange = (e) => {
-        const { files } = e.target
 
-        // Clone images array
-        const updatedImages = [...fields.images]
 
-        // Add new files to the array
-        for (const file of files) {
-            updatedImages.push(file)
+    // Gérer la soumission
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        
+        try {
+            // récupérer les données du formulaire
+            const formData = new FormData(e.target)
+
+            // envoyer les données du formulaire en response
+            const res = await fetch(`/api/properties/${id}`, {
+                method: 'PUT',
+                body: formData
+            })
+
+            console.log(res)
+
+            if (res.status === 200) {
+                router.push(`/properties/${id}`)
+            } else if (res.status === 401 || res.status === 403) {
+                toast.error('Permission refusée.')
+            } else {
+                toast.error('Quelque chose s\'est mal passé.')
+            }
+        } catch (e) {
+            console.log(e)
+            toast.error('Quelque chose s\'est mal passé.')
         }
-
-        // updated state with array of images
-        setFields((prevFields) =>({
-            ...prevFields,
-            images: updatedImages
-        }))
     }
 
 
     return (
-        <form action="/api/properties" method="POST" encType="multipart/form-data">
+        !loading && (
+            <form onSubmit={handleSubmit}>
             <h2 className="text-3xl text-center font-semibold mb-6">
-                Ajouter votre propriété
+                Modifier votre propriété
             </h2>
 
             <div className="mb-4">
@@ -539,37 +591,17 @@ const PropertyAddForm = () => {
                 />
             </div>
 
-            {/* Image */}
-            <div className="mb-4">
-                <label htmlFor="images" className="block text-gray-700 font-bold mb-2">
-                    Images (Sélectionnez jusqu'à 4 images)
-                </label>
-                <input
-                    type="file"
-                    id="images"
-                    name="images"
-                    className="block w-full text-sm text-slate-500
-                               file:mr-4 file:py-2 file:px-4
-                               file:rounded-full file:border-0
-                               file:text-sm file:font-semibold
-                               file:bg-indigo-300 file:text-white
-                               hover:file:bg-indigo-500"
-                    accept="image/*"
-                    multiple
-                    onChange={handleImageChange}
-                    required
-                />
-            </div>
-
             <div>
                 <button
                     className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                     type="submit"
                 >
-                    Ajouter Propriété
+                    Modifier Propriété
                 </button>
             </div>
         </form>
+        )
     )
 }
-export default PropertyAddForm
+export default PropertyEditForm
+

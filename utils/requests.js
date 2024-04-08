@@ -32,6 +32,7 @@ async function fetchProperty(id) {
         }
 
         const res = await fetch(`${apiDomain}/properties/${id}`)
+
         // si echec
         if (!res.ok) {
             throw new Error('Échec de la récupération des données')
