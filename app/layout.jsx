@@ -39,7 +39,7 @@ const MainLayout = ({ children }) => {
 
                 <body>
                     <Navbar />
-                    <main>{ children }</main>
+                    <main className="min-h-svh">{ children }</main>
                     <Footer />
                     <ToastContainer />
                 </body>
