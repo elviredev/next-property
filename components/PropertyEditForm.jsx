@@ -135,7 +135,7 @@ const PropertyEditForm = () => {
                 body: formData
             })
 
-            console.log(res)
+            // console.log(res)
 
             if (res.status === 200) {
                 router.push(`/properties/${id}`)
