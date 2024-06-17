@@ -57,7 +57,7 @@ const PropertyPage = () => {
                 <div className="container m-auto py-6 px-6">
                     <Link
                         href="/properties"
-                        className="text-blue-500 hover:text-blue-600 flex items-center"
+                        className="text-indigo-500 hover:text-indigo-600 flex items-center"
                     >
                         <FaArrowLeft className="mr-2" /> Retour aux propriétés
                     </Link>

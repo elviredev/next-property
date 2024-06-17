@@ -503,7 +503,7 @@ const PropertyAddForm = () => {
 
             {/* Infos Vendeur */}
             <div className="mb-4">
-                <label htmlFor="seller_name" className="block text-gray-700 font-bold mb-2">Nom du Vendeur</label>
+                <label htmlFor="seller_name" className="block text-gray-700 font-bold mb-2">Nom du propriétaire</label>
                 <input
                     type="text"
                     id="seller_name"
@@ -515,7 +515,7 @@ const PropertyAddForm = () => {
                 />
             </div>
             <div className="mb-4">
-                <label htmlFor="seller_email" className="block text-gray-700 font-bold mb-2">Email du vendeur</label>
+                <label htmlFor="seller_email" className="block text-gray-700 font-bold mb-2">Email du propriétaire</label>
                 <input
                     type="email"
                     id="seller_email"
@@ -528,7 +528,7 @@ const PropertyAddForm = () => {
                 />
             </div>
             <div className="mb-4">
-                <label htmlFor="seller_phone" className="block text-gray-700 font-bold mb-2">Téléphone du vendeur</label>
+                <label htmlFor="seller_phone" className="block text-gray-700 font-bold mb-2">Téléphone du propriétaire</label>
                 <input
                     type="tel"
                     id="seller_phone"

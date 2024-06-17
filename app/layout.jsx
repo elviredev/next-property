@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
 import { Montserrat, Lora } from 'next/font/google'
 import { ToastContainer } from 'react-toastify';
+import {GlobalProvider} from "@/context/GlobalContext";
 import '@/assets/styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,21 +31,23 @@ const lora = Lora({
 
 const MainLayout = ({ children }) => {
     return (
-        <AuthProvider>
-            <html
-                lang='fr'
-                suppressHydrationWarning={true}
-                className={`${montserrat.className} ${lora.variable}`}
-            >
+        <GlobalProvider>
+            <AuthProvider>
+                <html
+                    lang='fr'
+                    suppressHydrationWarning={true}
+                    className={`${montserrat.className} ${lora.variable}`}
+                >
 
-                <body>
-                    <Navbar />
-                    <main className="min-h-svh">{ children }</main>
-                    <Footer />
-                    <ToastContainer />
-                </body>
-            </html>
-        </AuthProvider>
+                    <body>
+                        <Navbar />
+                        <main className="min-h-svh">{ children }</main>
+                        <Footer />
+                        <ToastContainer />
+                    </body>
+                </html>
+            </AuthProvider>
+        </GlobalProvider>
     )
 }
 export default MainLayout
