@@ -11,11 +11,26 @@ export const GET = async (request) => {
         // se connecter à la bdd
         await connectDB()
 
-        // récupérer toutes les propriétés
-        const properties = await Property.find({})
+        // pagination
+        const page = request.nextUrl.searchParams.get('page') || 1
+        const pageSize = request.nextUrl.searchParams.get('pageSize') || 6
+
+        // saut de page pour ignorer les propriétés des pages précédentes
+        const skip = (page - 1) * pageSize
+
+        // nb total de propriétés
+        const total = await Property.countDocuments({})
+
+        // récupérer les propriétés de la page
+        const properties = await Property.find({}).skip(skip).limit(pageSize)
+
+        const result = {
+            total,
+            properties
+        }
 
         // transmettre properties
-        return new Response(JSON.stringify(properties), { status: 200 })
+        return new Response(JSON.stringify(result), { status: 200 })
     } catch (e) {
         console.log(e.message)
         return new Response('Something went wrong...', { status: 500 })
