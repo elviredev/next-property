@@ -163,7 +163,7 @@ const PropertyEditForm = () => {
                 <select
                     id="type"
                     name="type"
-                    className="border rounded w-full py-2 px-3"
+                    className="border rounded w-full py-2 px-3 text-sm sm:text-base"
                     required
                     value={fields.type}
                     onChange={handleChange}
@@ -184,7 +184,7 @@ const PropertyEditForm = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400"
+                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400 text-sm sm:text-base"
                     placeholder="eg. Bel appartement à Miami"
                     required
                     value={fields.name}
@@ -196,7 +196,7 @@ const PropertyEditForm = () => {
                 <textarea
                     id="description"
                     name="description"
-                    className="border rounded w-full py-2 px-3 outline-indigo-400"
+                    className="border rounded w-full py-2 px-3 outline-indigo-400 text-sm sm:text-base"
                     rows="4"
                     placeholder="Ajouter une description pour votre propriété (facultatif)"
                     value={fields.description}
@@ -211,7 +211,7 @@ const PropertyEditForm = () => {
                     type="text"
                     id="street"
                     name="location.street"
-                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400"
+                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400 text-sm sm:text-base"
                     placeholder="Rue"
                     value={fields.location.street}
                     onChange={handleChange}
@@ -220,7 +220,7 @@ const PropertyEditForm = () => {
                     type="text"
                     id="city"
                     name="location.city"
-                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400"
+                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400 text-sm sm:text-base"
                     placeholder="Ville"
                     required
                     value={fields.location.city}
@@ -230,7 +230,7 @@ const PropertyEditForm = () => {
                     type="text"
                     id="state"
                     name="location.state"
-                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400"
+                    className="border rounded w-full py-2 px-3 mb-2 outline-indigo-400 text-sm sm:text-base"
                     placeholder="Région"
                     required
                     value={fields.location.state}
@@ -291,7 +291,7 @@ const PropertyEditForm = () => {
             <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">Agréments</label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_wifi"
@@ -303,7 +303,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_wifi">Wifi</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_kitchen"
@@ -315,19 +315,19 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_kitchen">Cuisine équipée</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_washer_dryer"
                             name="amenities"
-                            value="Lave & Sèche Linge"
+                            value="Lave Linge"
                             className="mr-2 accent-indigo-500"
-                            checked={ fields.amenities.includes('Lave & Sèche Linge') }
+                            checked={ fields.amenities.includes('Lave Linge') }
                             onChange={handleAmenitiesChange}
                         />
-                        <label htmlFor="amenity_washer_dryer">Lave & Sèche Linge</label>
+                        <label htmlFor="amenity_washer_dryer">Lave Linge</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_free_parking"
@@ -339,7 +339,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_free_parking">Parking gratuit</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_pool"
@@ -351,7 +351,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_pool">Piscine</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_hot_tub"
@@ -363,7 +363,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_hot_tub">Jacuzzi</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_24_7_security"
@@ -375,7 +375,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_24_7_security">Sécurité 24/7</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_wheelchair_accessible"
@@ -387,7 +387,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_wheelchair_accessible">Accessible Fauteuil</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_elevator_access"
@@ -399,7 +399,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_elevator_access">Ascenseur</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_dishwasher"
@@ -411,7 +411,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_dishwasher">Lave-vaisselle</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_gym_fitness_center"
@@ -425,7 +425,7 @@ const PropertyEditForm = () => {
                             htmlFor="amenity_gym_fitness_center"
                         >Gym/Fitness</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_air_conditioning"
@@ -437,7 +437,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_air_conditioning">Air conditionné</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_balcony_patio"
@@ -449,7 +449,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_balcony_patio">Balcon/Patio</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_smart_tv"
@@ -461,7 +461,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_smart_tv">Smart TV</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_coffee_maker"
@@ -473,7 +473,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_coffee_maker">Machine à café</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_coffee_maker"
@@ -485,7 +485,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_coffee_maker">Cheminée</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_coffee_maker"
@@ -497,7 +497,7 @@ const PropertyEditForm = () => {
                         />
                         <label htmlFor="amenity_coffee_maker">BBQ/Grill</label>
                     </div>
-                    <div>
+                    <div className="inline-flex items-center text-nowrap text-xs sm:text-base">
                         <input
                             type="checkbox"
                             id="amenity_coffee_maker"
@@ -513,53 +513,56 @@ const PropertyEditForm = () => {
             </div>
 
             {/* Tarifs */}
-            <div className="mb-4 bg-indigo-50 p-4">
-                <label className="block text-gray-700 font-bold mb-2">Tarifs en € (Laissez un vide si non applicable)</label>
-                <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                    <div className="flex items-center">
-                        <label htmlFor="weekly_rate" className="mr-2">Semaine</label>
-                        <input
-                            type="number"
-                            id="weekly_rate"
-                            name="rates.weekly"
-                            className="border rounded w-full py-2 px-3"
-                            value={fields.rates.weekly}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="flex items-center">
-                        <label htmlFor="monthly_rate" className="mr-2">Mois</label>
-                        <input
-                            type="number"
-                            id="monthly_rate"
-                            name="rates.monthly"
-                            className="border rounded w-full py-2 px-3"
-                            value={fields.rates.monthly}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="flex items-center">
-                        <label htmlFor="nightly_rate" className="mr-2">Nuit</label>
-                        <input
-                            type="number"
-                            id="nightly_rate"
-                            name="rates.nightly"
-                            className="border rounded w-full py-2 px-3"
-                            value={fields.rates.nightly}
-                            onChange={handleChange}
-                        />
+                <div className="mb-4 bg-indigo-50 p-4">
+                    <label className="block text-gray-700 font-bold mb-2">
+                        Tarifs en € <span className="text-xs sm:text-base">(Laissez un vide si non applicable)</span>
+                    </label>
+                    <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                        <div className="flex items-center">
+                            <label htmlFor="weekly_rate" className="mr-2">Semaine</label>
+                            <input
+                                type="number"
+                                id="weekly_rate"
+                                name="rates.weekly"
+                                className="border rounded w-full py-2 px-3"
+                                value={fields.rates.weekly}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="flex items-center">
+                            <label htmlFor="monthly_rate" className="mr-2">Mois</label>
+                            <input
+                                type="number"
+                                id="monthly_rate"
+                                name="rates.monthly"
+                                className="border rounded w-full py-2 px-3"
+                                value={fields.rates.monthly}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="flex items-center">
+                            <label htmlFor="nightly_rate" className="mr-2">Nuit</label>
+                            <input
+                                type="number"
+                                id="nightly_rate"
+                                name="rates.nightly"
+                                className="border rounded w-full py-2 px-3"
+                                value={fields.rates.nightly}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Infos Vendeur */}
-            <div className="mb-4">
-                <label htmlFor="seller_name" className="block text-gray-700 font-bold mb-2">Nom du propriétaire</label>
-                <input
+                {/* Infos Vendeur */}
+                <div className="mb-4">
+                    <label htmlFor="seller_name" className="block text-gray-700 font-bold mb-2">Nom du
+                        propriétaire</label>
+                    <input
                     type="text"
                     id="seller_name"
                     name="seller_info.name"
-                    className="border rounded w-full py-2 px-3"
+                    className="border rounded w-full py-2 px-3 text-sm sm:text-base"
                     placeholder="Nom"
                     value={fields.seller_info.name}
                     onChange={handleChange}
@@ -571,7 +574,7 @@ const PropertyEditForm = () => {
                     type="email"
                     id="seller_email"
                     name="seller_info.email"
-                    className="border rounded w-full py-2 px-3"
+                    className="border rounded w-full py-2 px-3 text-sm sm:text-base"
                     placeholder="Email"
                     required
                     value={fields.seller_info.email}
@@ -584,7 +587,7 @@ const PropertyEditForm = () => {
                     type="tel"
                     id="seller_phone"
                     name="seller_info.phone"
-                    className="border rounded w-full py-2 px-3"
+                    className="border rounded w-full py-2 px-3 text-sm sm:text-base"
                     placeholder="Téléphone"
                     value={fields.seller_info.phone}
                     onChange={handleChange}

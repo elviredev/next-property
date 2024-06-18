@@ -75,20 +75,21 @@ const ProfilePage = () => {
                 <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
                     <h1 className="text-3xl font-bold mb-4">Votre profil</h1>
                     <div className="flex flex-col md:flex-row">
-                        <div className="md:w-1/4 mx-20 mt-10 mb-5">
+                        <div className="md:w-1/4 sm:mx-20 mt-10 mb-5">
                             <div className="mb-4">
                                 <Image
-                                    className="h-32 w-32 rounded-full mx-auto md:mx-0"
+                                    className="h-16 w-16 sm:w-32 sm:h-32 object-cover rounded-full mx-auto md:mx-0"
                                     src={profileImage || profileDefault}
                                     width={200}
                                     height={200}
                                     alt="User"
                                 />
                             </div>
-                            <h2 className="text-2xl mb-4"><span className="font-bold block">Nom: </span>
+                            <h2 className="text-sm lg:text-xl mb-4">
+                                <span className="font-bold block">Nom: </span>
                                 {profileName}
                             </h2>
-                            <h2 className="text-2xl"><span className="font-bold block">Email: </span>
+                            <h2 className="text-sm lg:text-xl"><span className="font-bold block">Email: </span>
                                 {profileEmail}
                             </h2>
                         </div>

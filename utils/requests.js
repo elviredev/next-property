@@ -3,14 +3,17 @@
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null
 
 // récupérer les propriétés
-async function fetchProperties() {
+async function fetchProperties({ showFeatured = false } = {}) {
     try {
         // vérifier le cas ou le domaine n'est pas encore disponible
         if (!apiDomain) {
             return []
         }
 
-        const res = await fetch(`${apiDomain}/properties`, {cache: "no-store"})
+        const res = await fetch(
+            `${apiDomain}/properties${showFeatured ? '/featured' : ''}`,
+            {cache: "no-store"}
+        )
         // si echec
         if (!res.ok) {
             throw new Error('Échec de la récupération des données')

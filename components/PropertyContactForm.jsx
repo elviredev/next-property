@@ -58,7 +58,7 @@ const PropertyContactForm = ({ property }) => {
 
     return (
         <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-6">Contacter le gestionnaire</h3>
+            <h3 className="text-sm sm:text-xl font-bold mb-6">Contacter le gestionnaire</h3>
             { !session ? ("Vous devez être connecté pour envoyer un message.") : (
                 wasSubmitted ? (
                     <p className="text-green-500 mb-4">Votre message a bien été envoyé au gestionnaire de l'annonce.</p>
@@ -72,7 +72,7 @@ const PropertyContactForm = ({ property }) => {
                                 Nom:
                             </label>
                             <input
-                                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-300'
+                                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-xs lg:text-base leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-300'
                                 id='name'
                                 type='text'
                                 placeholder='Entrer votre nom'
@@ -89,7 +89,7 @@ const PropertyContactForm = ({ property }) => {
                                 Email:
                             </label>
                             <input
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-300"
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-xs lg:text-base leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-300"
                                 id="email"
                                 type="email"
                                 placeholder="Entrer votre email"
@@ -106,7 +106,7 @@ const PropertyContactForm = ({ property }) => {
                                 Téléphone:
                             </label>
                             <input
-                                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-300'
+                                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-xs lg:text-base leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-300'
                                 id='phone'
                                 type='text'
                                 placeholder='Entrer votre n° de téléphone'
@@ -122,7 +122,7 @@ const PropertyContactForm = ({ property }) => {
                                 Message:
                             </label>
                             <textarea
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline focus:border-indigo-300 resize-none"
+                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 text-xs lg:text-base h-44 focus:outline-none focus:shadow-outline focus:border-indigo-300 resize-none"
                                 id="message"
                                 placeholder="Entrer votre message"
                                 value={message}
@@ -131,7 +131,7 @@ const PropertyContactForm = ({ property }) => {
                         </div>
                         <div>
                             <button
-                                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline flex items-center justify-center"
+                                className="bg-indigo-500 hover:bg-indigo-600 text-white text-sm lg:text-base font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline flex items-center justify-center"
                                 type="submit"
                             >
                                 <FaPaperPlane className="mr-2"/> Envoyer le message
